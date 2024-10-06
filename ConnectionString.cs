@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagementSystem._Common
 {
-    public static class CommonConnecStringM
+    public static class CommonConnecString
     {
         public static string ConnectionString
         {
@@ -17,14 +17,5 @@ namespace PharmacyManagementSystem._Common
         }
     }
 
-    public static class CommonConnecStringD
-    {
-        public static string ConnectionString
-        {
-            get
-            {
-                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Programming\PMS\PharmacyManagementSystem\_Common\Database_M.mdf;Integrated Security=True";
-            }
-        }
-    }
+    
 }
