@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace hemasHospitalDrugInventory.Suppliers
 {
-    public partial class Suppliers : Form
+    public partial class Main : Form
     {
-        public Suppliers()
+        public Main()
         {
             InitializeComponent();
         }
