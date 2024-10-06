@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="Employees\E_Usercontrols\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employees\E_Usercontrols\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +82,15 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employees\E_Usercontrols\S_UC_Home.cs">
+    <Compile Include="Employees\E_Usercontrols\S_UC_Index.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Employees\E_Usercontrols\S_UC_Home.Designer.cs">
-      <DependentUpon>S_UC_Home.cs</DependentUpon>
+    <Compile Include="Employees\E_Usercontrols\S_UC_Index.Designer.cs">
+      <DependentUpon>S_UC_Index.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Employees\E_Usercontrols\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,8 +104,8 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employees\E_Usercontrols\S_UC_Home.resx">
-      <DependentUpon>S_UC_Home.cs</DependentUpon>
+    <EmbeddedResource Include="Employees\E_Usercontrols\S_UC_Index.resx">
+      <DependentUpon>S_UC_Index.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

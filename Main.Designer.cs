@@ -32,13 +32,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.s_UC_Home1 = new hemasHospitalDrugInventory.Suppliers.S_Usercontrols.S_UC_Home();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.s_UC_Index1 = new hemasHospitalDrugInventory.Suppliers.S_Usercontrols.S_UC_Index();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.s_UC_Home1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.s_UC_Index1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -89,18 +89,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 469);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // s_UC_Home1
-            // 
-            this.s_UC_Home1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.s_UC_Home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(251)))));
-            this.s_UC_Home1.Location = new System.Drawing.Point(226, 93);
-            this.s_UC_Home1.MinimumSize = new System.Drawing.Size(555, 465);
-            this.s_UC_Home1.Name = "s_UC_Home1";
-            this.s_UC_Home1.Size = new System.Drawing.Size(555, 465);
-            this.s_UC_Home1.TabIndex = 2;
             // 
             // button5
             // 
@@ -206,14 +194,24 @@
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // Suppliers
+            // s_UC_Index1
+            // 
+            this.s_UC_Index1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.s_UC_Index1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.s_UC_Index1.Location = new System.Drawing.Point(226, 93);
+            this.s_UC_Index1.MinimumSize = new System.Drawing.Size(555, 465);
+            this.s_UC_Index1.Name = "s_UC_Index1";
+            this.s_UC_Index1.Size = new System.Drawing.Size(555, 465);
+            this.s_UC_Index1.TabIndex = 2;
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "Suppliers";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suppliers";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -235,6 +233,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
-        private S_Usercontrols.S_UC_Home s_UC_Home1;
+        private S_Usercontrols.S_UC_Index s_UC_Index1;
     }
 }

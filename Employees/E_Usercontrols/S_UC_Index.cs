@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace hemasHospitalDrugInventory.Suppliers.S_Usercontrols
 {
-    public partial class S_UC_Home : UserControl
+    public partial class S_UC_Index : UserControl
     {
-        public S_UC_Home()
+        public S_UC_Index()
         {
             InitializeComponent();
         }
