@@ -23,7 +23,7 @@ namespace PharmacyManagementSystem._Common
         {
             get
             {
-                return @"hi";
+                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\hemasHospitalDrugInventory\Database_SIM.mdf;Integrated Security=True";
             }
         }
     }
