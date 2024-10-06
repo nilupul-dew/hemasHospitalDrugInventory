@@ -68,6 +68,18 @@
     <Compile Include="Employees\E_Usercontrols\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employees\SupplierManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\SupplierManage.Designer.cs">
+      <DependentUpon>SupplierManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\WardManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees\WardManage.Designer.cs">
+      <DependentUpon>WardManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     </Compile>
     <EmbeddedResource Include="Employees\E_Usercontrols\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\SupplierManage.resx">
+      <DependentUpon>SupplierManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees\WardManage.resx">
+      <DependentUpon>WardManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
