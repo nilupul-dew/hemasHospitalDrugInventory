@@ -37,7 +37,6 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.notification = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +44,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.White;
-            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.transactionBtn);
             this.panelMenu.Controls.Add(this.actorsBtn);
             this.panelMenu.Controls.Add(this.inventoryBtn);
@@ -157,21 +155,6 @@
             this.notification.TabIndex = 0;
             this.notification.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 264);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(158, 39);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "  Transactions";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +181,6 @@
         private System.Windows.Forms.Button actorsBtn;
         private System.Windows.Forms.Button inventoryBtn;
         private System.Windows.Forms.Button notification;
-        private System.Windows.Forms.Button button1;
     }
 }
 
