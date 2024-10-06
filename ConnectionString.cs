@@ -12,7 +12,7 @@ namespace PharmacyManagementSystem._Common
         {
             get
             {
-                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Programming\PMS\PharmacyManagementSystem\_Common\Database_M.mdf;Integrated Security=True";
+                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\hemasHospitalDrugInventory\Database_SIM.mdf;Integrated Security=True";
             }
         }
     }
