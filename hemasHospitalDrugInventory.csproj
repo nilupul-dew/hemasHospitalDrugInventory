@@ -76,10 +76,10 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Suppliers\S_Usercontrols\S_UC_Home.cs">
+    <Compile Include="Employees\E_Usercontrols\S_UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Suppliers\S_Usercontrols\S_UC_Home.Designer.cs">
+    <Compile Include="Employees\E_Usercontrols\S_UC_Home.Designer.cs">
       <DependentUpon>S_UC_Home.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -95,7 +95,7 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Suppliers\S_Usercontrols\S_UC_Home.resx">
+    <EmbeddedResource Include="Employees\E_Usercontrols\S_UC_Home.resx">
       <DependentUpon>S_UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
