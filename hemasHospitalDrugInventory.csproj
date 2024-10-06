@@ -165,6 +165,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database_SIM.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Hemashospital.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

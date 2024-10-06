@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagementSystem._Common
 {
-    public static class CommonConnecString
+    public static class CommonConnecString //Mithila
     {
         public static string ConnectionString
         {
             get
             {
-                return @"Hello";
+                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Programming\Github\UGC_Project\Database_SIM.mdf;Integrated Security=True";
             }
         }
     }

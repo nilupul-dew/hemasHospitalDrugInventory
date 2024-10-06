@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Suppliers));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.s_UC_Home1 = new hemasHospitalDrugInventory.Suppliers.S_Usercontrols.S_UC_Home();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.s_UC_Home1 = new hemasHospitalDrugInventory.Suppliers.S_Usercontrols.S_UC_Home();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -76,6 +76,32 @@
             this.panel1.Size = new System.Drawing.Size(782, 88);
             this.panel1.TabIndex = 0;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 91);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 469);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // s_UC_Home1
+            // 
+            this.s_UC_Home1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.s_UC_Home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(251)))));
+            this.s_UC_Home1.Location = new System.Drawing.Point(226, 93);
+            this.s_UC_Home1.MinimumSize = new System.Drawing.Size(555, 465);
+            this.s_UC_Home1.Name = "s_UC_Home1";
+            this.s_UC_Home1.Size = new System.Drawing.Size(555, 465);
+            this.s_UC_Home1.TabIndex = 2;
+            // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -96,27 +122,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::hemasHospitalDrugInventory.Properties.Resources.Logo;
+            this.pictureBox1.Image = global::hemasHospitalDrugInventory.Properties.Resources.Hemashospital_LOGO;
             this.pictureBox1.Location = new System.Drawing.Point(39, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(93, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 91);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 469);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button1
             // 
@@ -194,18 +206,6 @@
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // s_UC_Home1
-            // 
-            this.s_UC_Home1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.s_UC_Home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(251)))));
-            this.s_UC_Home1.Location = new System.Drawing.Point(226, 93);
-            this.s_UC_Home1.MinimumSize = new System.Drawing.Size(555, 465);
-            this.s_UC_Home1.Name = "s_UC_Home1";
-            this.s_UC_Home1.Size = new System.Drawing.Size(555, 465);
-            this.s_UC_Home1.TabIndex = 2;
-            // 
             // Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,8 +218,8 @@
             this.Text = "Suppliers";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
