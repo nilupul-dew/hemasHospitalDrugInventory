@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace hemasHospitalDrugInventory.Suppliers
+namespace hemasHospitalDrugInventory.Inventory
 {
-    public partial class Main : Form
+    public partial class Add_Inventory : Form
     {
-        public Main()
+        public Add_Inventory()
         {
             InitializeComponent();
-        }
-
-        private void Inventory_btn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

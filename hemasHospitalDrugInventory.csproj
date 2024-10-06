@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="Inventory\Add_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Add_Inventory.Designer.cs">
+      <DependentUpon>Add_Inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\I_Usercontrols\UC_Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Employees\E_Usercontrols\S_UC_Home.Designer.cs">
       <DependentUpon>S_UC_Home.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Inventory\Add_Inventory.resx">
+      <DependentUpon>Add_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory\I_Usercontrols\UC_Inventory.resx">
       <DependentUpon>UC_Inventory.cs</DependentUpon>
     </EmbeddedResource>
