@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NewOreder_btn = new System.Windows.Forms.Button();
             this.Add_btn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_1 = new System.Windows.Forms.TabPage();
@@ -144,7 +144,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.NewOreder_btn);
             this.panel2.Controls.Add(this.Add_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(1, 454);
@@ -153,27 +153,28 @@
             this.panel2.Size = new System.Drawing.Size(905, 58);
             this.panel2.TabIndex = 5;
             // 
-            // button1
+            // NewOreder_btn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(402, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(218, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "66";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.NewOreder_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewOreder_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.NewOreder_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.NewOreder_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.NewOreder_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
+            this.NewOreder_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewOreder_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewOreder_btn.ForeColor = System.Drawing.Color.White;
+            this.NewOreder_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NewOreder_btn.Location = new System.Drawing.Point(640, 7);
+            this.NewOreder_btn.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
+            this.NewOreder_btn.Name = "NewOreder_btn";
+            this.NewOreder_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.NewOreder_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NewOreder_btn.Size = new System.Drawing.Size(218, 45);
+            this.NewOreder_btn.TabIndex = 9;
+            this.NewOreder_btn.Text = "New Order";
+            this.NewOreder_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.NewOreder_btn.UseVisualStyleBackColor = false;
+            this.NewOreder_btn.Click += new System.EventHandler(this.NewOreder_btn_Click);
             // 
             // Add_btn
             // 
@@ -186,7 +187,7 @@
             this.Add_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add_btn.ForeColor = System.Drawing.Color.White;
             this.Add_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Add_btn.Location = new System.Drawing.Point(650, 6);
+            this.Add_btn.Location = new System.Drawing.Point(369, 7);
             this.Add_btn.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
             this.Add_btn.Name = "Add_btn";
             this.Add_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -355,7 +356,7 @@
         private System.Windows.Forms.TabPage tabPage_3;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button NewOreder_btn;
         private System.Windows.Forms.Button Add_btn;
     }
 }

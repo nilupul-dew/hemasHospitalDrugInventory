@@ -20,6 +20,7 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
             InitializeComponent();
             Load_All_InventoryTableData();
             Load_nearExpiry_InventoryTableData();
+            Load_LowStock_InventoryTableData();
         }
 
         void Load_All_InventoryTableData()
@@ -284,7 +285,100 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
             }
         }
 
-        private void Add_btn_Click(object sender, EventArgs e)
+        void Load_LowStock_InventoryTableData()
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(CommonConnecString.ConnectionString))
+                {
+                    connect.Open();
+                    string query = @"
+                                    SELECT 
+                                        i.InventoryID,
+                                        d.DrugName, 
+                                        d.Dosage, 
+                                        d.CategoryID, 
+                                        i.ExpireDate, 
+                                        i.Quantity
+                                    FROM Inventory i
+                                    INNER JOIN Drug d ON i.Drug_ID = d.Drug_ID
+                                    WHERE i.Quantity < 200;";  // Only get records where Quantity is less than 100
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            dataGridView3.DataSource = table;
+                            Console.WriteLine("Data Loaded Successfully3");
+
+                            // Rename columns after setting the DataSource
+                            #region Rename Column Names
+                            foreach (DataGridViewColumn column in dataGridView3.Columns)
+                            {
+                                switch (column.Name)
+                                {
+                                    case "InventoryID":
+                                        column.HeaderText = "Inventory ID";
+                                        break;
+                                    case "DrugName":
+                                        column.HeaderText = "Drug Name";
+                                        break;
+                                    case "Dosage":
+                                        column.HeaderText = "Dosage";
+                                        break;
+                                    case "CategoryID":
+                                        column.HeaderText = "Category ID";
+                                        break;
+                                    case "ExpireDate":
+                                        column.HeaderText = "Expiration Date";
+                                        break;
+                                    case "Quantity":
+                                        column.HeaderText = "Quantity";
+                                        break;
+
+                                    default:
+                                        break;
+                                }
+                            }
+                            #endregion
+
+                            // Add a Checkbox Column for "New Order"
+                            DataGridViewCheckBoxColumn newOrderColumn = new DataGridViewCheckBoxColumn();
+                            newOrderColumn.Name = "NewOrder";
+                            newOrderColumn.HeaderText = "New Order";
+                            newOrderColumn.FalseValue = false;
+                            newOrderColumn.TrueValue = true;
+
+                            // Add the checkbox column to the DataGridView as the first column
+                            if (!dataGridView3.Columns.Contains("NewOrder"))
+                            {
+                                dataGridView3.Columns.Insert(0, newOrderColumn); // Insert at index 0 for the first column
+                            }
+
+                            // Ensure the entire DataGridView is ReadOnly, except for the checkbox column
+                            dataGridView3.ReadOnly = false;  // Allow DataGridView to be editable
+                            foreach (DataGridViewColumn column in dataGridView3.Columns)
+                            {
+                                if (column.Name != "NewOrder")
+                                {
+                                    column.ReadOnly = true; // Make all columns except "NewOrder" read-only
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex);
+            }
+
+        }
+
+        private void NewOreder_btn_Click(object sender, EventArgs e)
         {
             TabPage selectedTab = tabControl1.SelectedTab;
 
@@ -292,7 +386,7 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
             {
                 case "tabPage_1":
                     // All
-                    //AddAllTab();
+                    AddAllTab();
                     Console.WriteLine("All Tab Selected");
                     break;
 
@@ -303,7 +397,7 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                     break;
                 case "tabPage_3":
                     // Low Stock
-                    Console.WriteLine("Low Stock Tab Selected");
+                    LowStockTab();
                     break;
 
                 default:
@@ -311,6 +405,11 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                     MessageBox.Show("Invalide Tab.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+
+        }
+        private void Add_btn_Click(object sender, EventArgs e)
+        {
+            
         }
 
         void AddAllTab()
@@ -331,6 +430,7 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
             // Check if the list is not empty
             if (selectedInventoryIDs.Count > 0)
             {
+                
 
                 OrderList orderList = new OrderList(selectedInventoryIDs);
                 orderList.FormClosed += (s, args) =>
@@ -370,7 +470,41 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                 orderList.FormClosed += (s, args) =>
                 {
                     // Refresh the data after the form is closed
-                    Load_All_InventoryTableData();
+                    Load_nearExpiry_InventoryTableData();
+                };
+                orderList.ShowDialog();
+            }
+            else
+            {
+                // Show an error message if the list is empty
+                MessageBox.Show("Please select at least one item to proceed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+        void LowStockTab()
+        {
+            List<int> selectedInventoryIDs = new List<int>(); // List to hold InventoryIDs of checked rows
+
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                // Check if the New Order checkbox is checked
+                DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["NewOrder"];
+                if (checkBoxCell != null && Convert.ToBoolean(checkBoxCell.Value) == true)
+                {
+                    int inventoryID = Convert.ToInt32(row.Cells["InventoryID"].Value);
+                    selectedInventoryIDs.Add(inventoryID);
+                }
+            }
+
+            // Check if the list is not empty
+            if (selectedInventoryIDs.Count > 0)
+            {
+
+                OrderList orderList = new OrderList(selectedInventoryIDs);
+                orderList.FormClosed += (s, args) =>
+                {
+                    // Refresh the data after the form is closed
+                    Load_LowStock_InventoryTableData();
                 };
                 orderList.ShowDialog();
             }
@@ -382,6 +516,6 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
             }
         }
 
-       
+        
     }
 }
