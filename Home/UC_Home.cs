@@ -1,7 +1,9 @@
-﻿using System;
+﻿using PharmacyManagementSystem._Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,29 +18,52 @@ namespace hemasHospitalDrugInventory.Home
         public UC_Home()
         {
             InitializeComponent();
+            LoadWardManagerChart();
         }
 
-        void LoadGraph()
+        public void LoadWardManagerChart()
         {
-            // Example data
-            string[] categories = { "ICU", "Surgical Ward", "CCU", "ISaolation ward", "Burned Unit", "Neurogy Ward", "Psychiatric Ward" };
-            int[] values = { 300, 250, 600, 100, 150, 200, 900 };
+            using (SqlConnection connect = new SqlConnection(CommonConnecString.ConnectionString))
+            {
+                connect.Open();
 
-            // Clear any existing series and chart areas
-            chart1.Series.Clear();
-            chart1.ChartAreas.Clear();
+                string query = @"
+            SELECT 
+                w.Name, 
+                COUNT(wm.WardManagerID) AS WardManagerCount
+            FROM 
+                Ward w
+            LEFT JOIN 
+                Ward_Manager wm ON w.WardID = wm.WardID
+            GROUP BY 
+                w.Name
+            ORDER BY 
+                w.Name";
 
-            // Add a new chart area and series
-            chart1.ChartAreas.Add("chartArea1");
-            chart1.Series.Add("Series1");
+                SqlCommand cmd = new SqlCommand(query, connect);
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            // Bind data to the series
-            chart1.Series["Series1"].Points.DataBindXY(categories, values);
+                // Assuming you have a chart control named 'chartWardManagers'
+                chart1.Series.Clear(); // Clear any existing series
+                Series series = new Series
+                {
+                    Name = "Ward Managers",
+                    IsValueShownAsLabel = true, // Show the count as labels on the chart
+                    ChartType = SeriesChartType.Column // Column chart for X, Y axis display
+                };
 
-            // Customize chart appearance
-            chart1.ChartAreas[0].AxisX.Title = "Categories";
-            chart1.ChartAreas[0].AxisY.Title = "Values";
-            chart1.Series["Series1"].ChartType = SeriesChartType.Bar;
+                chart1.Series.Add(series);
+
+                while (reader.Read())
+                {
+                    string wardName = reader["Name"].ToString();
+                    int managerCount = Convert.ToInt32(reader["WardManagerCount"]);
+
+                    series.Points.AddXY(wardName, managerCount); // X-axis = WardName, Y-axis = Count
+                }
+
+                reader.Close();
+            }
         }
     }
 }
