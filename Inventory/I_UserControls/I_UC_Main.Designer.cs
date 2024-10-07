@@ -41,25 +41,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Add_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Add_btn = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage_1 = new System.Windows.Forms.TabPage();
+            this.tabPage_2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabPage_3 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage_1.SuspendLayout();
+            this.tabPage_2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage_3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -141,14 +141,71 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(907, 513);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.Add_btn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(1, 454);
+            this.panel2.Margin = new System.Windows.Forms.Padding(1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(905, 58);
+            this.panel2.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(402, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(218, 45);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "66";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // Add_btn
+            // 
+            this.Add_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.Add_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Add_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.Add_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
+            this.Add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_btn.ForeColor = System.Drawing.Color.White;
+            this.Add_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Add_btn.Location = new System.Drawing.Point(650, 6);
+            this.Add_btn.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
+            this.Add_btn.Name = "Add_btn";
+            this.Add_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Add_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Add_btn.Size = new System.Drawing.Size(218, 45);
+            this.Add_btn.TabIndex = 8;
+            this.Add_btn.Text = "Add";
+            this.Add_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Add_btn.UseVisualStyleBackColor = false;
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage_1);
+            this.tabControl1.Controls.Add(this.tabPage_2);
+            this.tabControl1.Controls.Add(this.tabPage_3);
             this.tabControl1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(200, 24);
             this.tabControl1.Location = new System.Drawing.Point(3, 53);
@@ -158,27 +215,27 @@
             this.tabControl1.Size = new System.Drawing.Size(901, 397);
             this.tabControl1.TabIndex = 4;
             // 
-            // tabPage1
+            // tabPage_1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(893, 365);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "All";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage_1.Controls.Add(this.dataGridView1);
+            this.tabPage_1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage_1.Name = "tabPage_1";
+            this.tabPage_1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_1.Size = new System.Drawing.Size(893, 365);
+            this.tabPage_1.TabIndex = 0;
+            this.tabPage_1.Text = "All";
+            this.tabPage_1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabPage_2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(893, 365);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "NearExpiry";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage_2.Controls.Add(this.dataGridView2);
+            this.tabPage_2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage_2.Name = "tabPage_2";
+            this.tabPage_2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_2.Size = new System.Drawing.Size(893, 365);
+            this.tabPage_2.TabIndex = 1;
+            this.tabPage_2.Text = "NearExpiry";
+            this.tabPage_2.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -216,16 +273,16 @@
             this.dataGridView2.Size = new System.Drawing.Size(887, 359);
             this.dataGridView2.TabIndex = 1;
             // 
-            // tabPage3
+            // tabPage_3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(893, 365);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Low Stock";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage_3.Controls.Add(this.dataGridView3);
+            this.tabPage_3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage_3.Name = "tabPage_3";
+            this.tabPage_3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_3.Size = new System.Drawing.Size(893, 365);
+            this.tabPage_3.TabIndex = 2;
+            this.tabPage_3.Text = "Low Stock";
+            this.tabPage_3.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -263,62 +320,6 @@
             this.dataGridView3.Size = new System.Drawing.Size(887, 359);
             this.dataGridView3.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.Add_btn);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(1, 454);
-            this.panel2.Margin = new System.Windows.Forms.Padding(1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(905, 58);
-            this.panel2.TabIndex = 5;
-            // 
-            // Add_btn
-            // 
-            this.Add_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.Add_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Add_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.Add_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
-            this.Add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_btn.ForeColor = System.Drawing.Color.White;
-            this.Add_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Add_btn.Location = new System.Drawing.Point(650, 6);
-            this.Add_btn.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
-            this.Add_btn.Name = "Add_btn";
-            this.Add_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Add_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Add_btn.Size = new System.Drawing.Size(218, 45);
-            this.Add_btn.TabIndex = 8;
-            this.Add_btn.Text = "Add";
-            this.Add_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Add_btn.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(402, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(218, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Add";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // I_UC_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,13 +331,13 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage_1.ResumeLayout(false);
+            this.tabPage_2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage_3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,10 +349,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage_1;
+        private System.Windows.Forms.TabPage tabPage_2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage_3;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;

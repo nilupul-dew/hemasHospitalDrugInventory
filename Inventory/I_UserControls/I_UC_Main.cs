@@ -121,6 +121,61 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                 Console.WriteLine(ex);
             }
         }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the clicked cell is not a header cell
+            if (e.RowIndex >= 0)
+            {
+                // Check if the clicked column is the New Order column
+                if (e.ColumnIndex == dataGridView1.Columns["NewOrder"].Index)
+                {
+
+                    return;
+                }
+                else
+                {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                    // Retrieve data from the selected row based on Ward Manager details
+                    int inventoryID = Convert.ToInt32(selectedRow.Cells["InventoryID"].Value);
+
+                    Console.WriteLine("Selected Inventory ID: " + inventoryID);
+                    //// Pass the retrieved data to another form
+                    //WardManage wardManager = new WardManage(inventoryID);
+                    //wardManager.FormClosed += (s, args) =>
+                    //{
+                    //    // Refresh the data after the form is closed
+                    //    //LoadWardManagerTableData();
+                    //};
+                    //wardManager.ShowDialog();
+
+                }
+            }
+
+
+
+
+            //// Ensure the click is not on the header row or outside the grid bounds
+            //if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            //{
+            //    if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count) // Check for valid index
+            //    {
+            //        DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
+
+            //        // Check if the checkbox column "NewOrder" exists and toggle the checkbox
+            //        if (dataGridView1.Columns.Contains("NewOrder"))
+            //        {
+            //            DataGridViewCheckBoxCell checkboxCell = (DataGridViewCheckBoxCell)clickedRow.Cells["NewOrder"];
+            //            bool isChecked = Convert.ToBoolean(checkboxCell.Value);
+
+            //            // Toggle the checkbox state
+            //            checkboxCell.Value = !isChecked;
+
+            //            dataGridView1.RefreshEdit(); // Optionally refresh the cell to reflect the change
+            //        }
+            //    }
+            //}
+        }
 
         void Load_nearExpiry_InventoryTableData()
         {
@@ -229,63 +284,36 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Add_btn_Click(object sender, EventArgs e)
         {
-            // Ensure the clicked cell is not a header cell
-            if (e.RowIndex >= 0)
+            TabPage selectedTab = tabControl1.SelectedTab;
+
+            switch (selectedTab.Name)
             {
-                // Check if the clicked column is the New Order column
-                if (e.ColumnIndex == dataGridView1.Columns["NewOrder"].Index)
-                {
+                case "tabPage_1":
+                    // All
+                    //AddAllTab();
+                    Console.WriteLine("All Tab Selected");
+                    break;
 
-                    return;
-                }
-                else
-                {
-                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                case "tabPage_2":
+                    // Near Expiry
+                    NearExpiryTab();
+                    Console.WriteLine("Near Expiry Tab Selected");
+                    break;
+                case "tabPage_3":
+                    // Low Stock
+                    Console.WriteLine("Low Stock Tab Selected");
+                    break;
 
-                    // Retrieve data from the selected row based on Ward Manager details
-                    int inventoryID = Convert.ToInt32(selectedRow.Cells["InventoryID"].Value);
+                default:
 
-                    Console.WriteLine("Selected Inventory ID: " + inventoryID);
-                    //// Pass the retrieved data to another form
-                    //WardManage wardManager = new WardManage(inventoryID);
-                    //wardManager.FormClosed += (s, args) =>
-                    //{
-                    //    // Refresh the data after the form is closed
-                    //    //LoadWardManagerTableData();
-                    //};
-                    //wardManager.ShowDialog();
-
-                }
+                    MessageBox.Show("Invalide Tab.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
             }
-
-
-
-
-            //// Ensure the click is not on the header row or outside the grid bounds
-            //if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            //{
-            //    if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count) // Check for valid index
-            //    {
-            //        DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
-
-            //        // Check if the checkbox column "NewOrder" exists and toggle the checkbox
-            //        if (dataGridView1.Columns.Contains("NewOrder"))
-            //        {
-            //            DataGridViewCheckBoxCell checkboxCell = (DataGridViewCheckBoxCell)clickedRow.Cells["NewOrder"];
-            //            bool isChecked = Convert.ToBoolean(checkboxCell.Value);
-
-            //            // Toggle the checkbox state
-            //            checkboxCell.Value = !isChecked;
-
-            //            dataGridView1.RefreshEdit(); // Optionally refresh the cell to reflect the change
-            //        }
-            //    }
-            //}
         }
 
-        private void Add_btn_Click(object sender, EventArgs e)
+        void AddAllTab()
         {
             List<int> selectedInventoryIDs = new List<int>(); // List to hold InventoryIDs of checked rows
 
@@ -319,5 +347,41 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                 return;
             }
         }
+        void NearExpiryTab()
+        {
+            List<int> selectedInventoryIDs = new List<int>(); // List to hold InventoryIDs of checked rows
+
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                // Check if the New Order checkbox is checked
+                DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["NewOrder"];
+                if (checkBoxCell != null && Convert.ToBoolean(checkBoxCell.Value) == true)
+                {
+                    int inventoryID = Convert.ToInt32(row.Cells["InventoryID"].Value);
+                    selectedInventoryIDs.Add(inventoryID);
+                }
+            }
+
+            // Check if the list is not empty
+            if (selectedInventoryIDs.Count > 0)
+            {
+
+                OrderList orderList = new OrderList(selectedInventoryIDs);
+                orderList.FormClosed += (s, args) =>
+                {
+                    // Refresh the data after the form is closed
+                    Load_All_InventoryTableData();
+                };
+                orderList.ShowDialog();
+            }
+            else
+            {
+                // Show an error message if the list is empty
+                MessageBox.Show("Please select at least one item to proceed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+       
     }
 }
