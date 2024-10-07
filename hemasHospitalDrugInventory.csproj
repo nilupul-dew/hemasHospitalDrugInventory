@@ -80,6 +80,12 @@
     <Compile Include="Employees\WardManage.Designer.cs">
       <DependentUpon>WardManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\Add_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Add_Inventory.Designer.cs">
+      <DependentUpon>Add_Inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\I_UserControls\I_UC_Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="Inventory\OrderList.Designer.cs">
       <DependentUpon>OrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Update_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Update_Inventory.Designer.cs">
+      <DependentUpon>Update_Inventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -133,11 +145,17 @@
     <EmbeddedResource Include="Employees\WardManage.resx">
       <DependentUpon>WardManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Add_Inventory.resx">
+      <DependentUpon>Add_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory\I_UserControls\I_UC_Main.resx">
       <DependentUpon>I_UC_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Update_Inventory.resx">
+      <DependentUpon>Update_Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,7 +198,6 @@
   <ItemGroup>
     <None Include="Resources\home_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Home.png" />
   </ItemGroup>
@@ -215,6 +232,9 @@
     <None Include="Resources\notifications.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Hemashospital.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Database_SIM.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -222,7 +242,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database_SIM.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\Hemashospital.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
