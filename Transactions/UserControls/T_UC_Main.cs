@@ -17,7 +17,7 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
         public T_UC_Main()
         {
             InitializeComponent();
-            LoadOrderTableData();
+            //LoadOrderTableData();
         }
 
         void LoadOrderTableData()
@@ -32,10 +32,10 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
                     string query = @"
                 SELECT 
                     o.OrderID,
-                    i.ProductName,
                     o.Quantity,
-                    s.Name AS SupplierName,
-                    o.IsDelivered
+                    o.IsDelivered,
+                    i.ProductName,
+                    s.Name AS SupplierName
                 FROM [Order] o
                 INNER JOIN Inventory i ON o.InventoryID = i.InventoryID
                 INNER JOIN Supplier s ON o.SupplierID = s.SupplierID;";
