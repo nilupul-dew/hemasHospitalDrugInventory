@@ -100,6 +100,18 @@
     <Compile Include="Employees\E_Usercontrols\S_UC_Index.Designer.cs">
       <DependentUpon>S_UC_Index.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\OrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\OrderDetails.Designer.cs">
+      <DependentUpon>OrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\UserControls\T_UC_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transactions\UserControls\T_UC_Main.Designer.cs">
+      <DependentUpon>T_UC_Main.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Employees\E_Usercontrols\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\E_Usercontrols\S_UC_Index.resx">
       <DependentUpon>S_UC_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\OrderDetails.resx">
+      <DependentUpon>OrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\UserControls\T_UC_Main.resx">
+      <DependentUpon>T_UC_Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
