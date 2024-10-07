@@ -30,11 +30,17 @@ namespace hemasHospitalDrugInventory.Suppliers
         void InitializeUserControls()
         {
 
+
             // Initialize user controls
             T_UC_Main t_UC_Main = new T_UC_Main();
             S_UC_Index s_UC_Index = new S_UC_Index();
             I_UC_Main i_UC_Main = new I_UC_Main();
             
+
+            t_UC_Main = new T_UC_Main();
+            s_UC_Index = new S_UC_Index();
+            i_UC_Main = new I_UC_Main();
+
 
             t_UC_Main = new T_UC_Main();
             s_UC_Index = new S_UC_Index();
