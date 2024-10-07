@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace hemasHospitalDrugInventory
+namespace hemasHospitalDrugInventory.Transactions
 {
-    public partial class Form1 : Form
+    public partial class OrderDetails : Form
     {
-        public Form1()
+        public OrderDetails()
         {
             InitializeComponent();
         }
