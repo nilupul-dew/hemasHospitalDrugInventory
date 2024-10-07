@@ -68,6 +68,12 @@
     <Compile Include="Inventory\Add_Inventory.Designer.cs">
       <DependentUpon>Add_Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\I_Usercontrols\UC_Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="Inventory\Add_Inventory.resx">
       <DependentUpon>Add_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\I_Usercontrols\UC_Inventory.resx">
       <DependentUpon>UC_Inventory.cs</DependentUpon>
