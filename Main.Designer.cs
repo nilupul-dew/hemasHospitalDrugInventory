@@ -36,9 +36,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.s_UC_Index1 = new hemasHospitalDrugInventory.Suppliers.S_Usercontrols.S_UC_Index();
+            this.employee_btn = new System.Windows.Forms.Button();
+            this.transaction_btn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.s_UC_Index1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -109,8 +109,8 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.employee_btn);
+            this.flowLayoutPanel1.Controls.Add(this.transaction_btn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 91);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
@@ -156,53 +156,55 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // employee_btn
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(188)))), ((int)(((byte)(211)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::hemasHospitalDrugInventory.Properties.Resources.Employees;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 135);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(218, 60);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Employees";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.employee_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.employee_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(188)))), ((int)(((byte)(211)))));
+            this.employee_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
+            this.employee_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employee_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employee_btn.Image = global::hemasHospitalDrugInventory.Properties.Resources.Employees;
+            this.employee_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.employee_btn.Location = new System.Drawing.Point(3, 135);
+            this.employee_btn.Name = "employee_btn";
+            this.employee_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.employee_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.employee_btn.Size = new System.Drawing.Size(218, 60);
+            this.employee_btn.TabIndex = 2;
+            this.employee_btn.Text = "Employees";
+            this.employee_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.employee_btn.UseVisualStyleBackColor = true;
+            this.employee_btn.Click += new System.EventHandler(this.employee_btn_Click);
             // 
-            // button4
+            // transaction_btn
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(188)))), ((int)(((byte)(211)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::hemasHospitalDrugInventory.Properties.Resources.Transactions;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 201);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button4.Size = new System.Drawing.Size(218, 60);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Transactions";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.transaction_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.transaction_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(188)))), ((int)(((byte)(211)))));
+            this.transaction_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
+            this.transaction_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transaction_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transaction_btn.Image = global::hemasHospitalDrugInventory.Properties.Resources.Transactions;
+            this.transaction_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.transaction_btn.Location = new System.Drawing.Point(3, 201);
+            this.transaction_btn.Name = "transaction_btn";
+            this.transaction_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.transaction_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.transaction_btn.Size = new System.Drawing.Size(218, 60);
+            this.transaction_btn.TabIndex = 3;
+            this.transaction_btn.Text = "Transactions";
+            this.transaction_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.transaction_btn.UseVisualStyleBackColor = true;
+            this.transaction_btn.Click += new System.EventHandler(this.transaction_btn_Click);
             // 
-            // s_UC_Index1
+            // panel2
             // 
-            this.s_UC_Index1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.s_UC_Index1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.s_UC_Index1.Location = new System.Drawing.Point(226, 93);
-            this.s_UC_Index1.MinimumSize = new System.Drawing.Size(555, 465);
-            this.s_UC_Index1.Name = "s_UC_Index1";
-            this.s_UC_Index1.Size = new System.Drawing.Size(907, 513);
-            this.s_UC_Index1.TabIndex = 2;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(223, 90);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(913, 519);
+            this.panel2.TabIndex = 2;
             // 
             // Main
             // 
@@ -229,10 +231,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button employee_btn;
+        private System.Windows.Forms.Button transaction_btn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
-        private S_Usercontrols.S_UC_Index s_UC_Index1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
