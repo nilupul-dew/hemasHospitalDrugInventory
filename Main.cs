@@ -16,6 +16,10 @@ namespace hemasHospitalDrugInventory.Suppliers
 {
     public partial class Main : Form
     {
+        // Declare user controls as class-level variables
+        S_UC_Index s_UC_Index; // Employee user control
+        I_UC_Main i_UC_Main; // Inventory user control
+        T_UC_Main t_UC_Main; // Transaction user control
         public Main()
         {
             InitializeComponent();
@@ -24,10 +28,9 @@ namespace hemasHospitalDrugInventory.Suppliers
 
         void InitializeUserControls()
         {
-            // Initialize user controls
-            T_UC_Main t_UC_Main = new T_UC_Main();
-            S_UC_Index s_UC_Index = new S_UC_Index();
-            I_UC_Main i_UC_Main = new I_UC_Main();
+            t_UC_Main = new T_UC_Main();
+            s_UC_Index = new S_UC_Index();
+            i_UC_Main = new I_UC_Main();
 
             // Set the DockStyle to fill so it occupies the entire panel
             t_UC_Main.Dock = DockStyle.Fill;
@@ -45,13 +48,15 @@ namespace hemasHospitalDrugInventory.Suppliers
 
         private void employee_btn_Click(object sender, EventArgs e)
         {
-           
-
+            s_UC_Index.BringToFront();
         }
-
         private void transaction_btn_Click(object sender, EventArgs e)
         {
-
+            t_UC_Main.BringToFront();
+        }
+        private void Inventory_btn_Click(object sender, EventArgs e)
+        {
+            i_UC_Main.BringToFront();
         }
     }
 }

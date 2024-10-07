@@ -35,7 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Inventory_btn = new System.Windows.Forms.Button();
             this.employee_btn = new System.Windows.Forms.Button();
             this.transaction_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -108,7 +108,7 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.Inventory_btn);
             this.flowLayoutPanel1.Controls.Add(this.employee_btn);
             this.flowLayoutPanel1.Controls.Add(this.transaction_btn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,24 +137,25 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Inventory_btn
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(188)))), ((int)(((byte)(211)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::hemasHospitalDrugInventory.Properties.Resources.Inventory;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 69);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(218, 60);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Inventory";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.Inventory_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Inventory_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(188)))), ((int)(((byte)(211)))));
+            this.Inventory_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
+            this.Inventory_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Inventory_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inventory_btn.Image = global::hemasHospitalDrugInventory.Properties.Resources.Inventory;
+            this.Inventory_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Inventory_btn.Location = new System.Drawing.Point(3, 69);
+            this.Inventory_btn.Name = "Inventory_btn";
+            this.Inventory_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Inventory_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Inventory_btn.Size = new System.Drawing.Size(218, 60);
+            this.Inventory_btn.TabIndex = 1;
+            this.Inventory_btn.Text = "Inventory";
+            this.Inventory_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Inventory_btn.UseVisualStyleBackColor = true;
+            this.Inventory_btn.Click += new System.EventHandler(this.Inventory_btn_Click);
             // 
             // employee_btn
             // 
@@ -230,7 +231,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Inventory_btn;
         private System.Windows.Forms.Button employee_btn;
         private System.Windows.Forms.Button transaction_btn;
         private System.Windows.Forms.PictureBox pictureBox1;

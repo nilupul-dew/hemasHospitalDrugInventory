@@ -19,7 +19,7 @@ namespace hemasHospitalDrugInventory
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inventory.Add_Inventory());
+            Application.Run(new Main());
         }
     }
 }
