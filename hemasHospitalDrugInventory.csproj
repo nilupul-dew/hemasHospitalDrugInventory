@@ -154,6 +154,9 @@
     <EmbeddedResource Include="Inventory\OrderList.resx">
       <DependentUpon>OrderList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Update_Inventory.resx">
+      <DependentUpon>Update_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
