@@ -147,7 +147,11 @@
   <ItemGroup>
     <None Include="Resources\home_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database_SIM.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Home.png" />
   </ItemGroup>
@@ -182,13 +186,6 @@
     <None Include="Resources\notifications.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database_SIM.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database_SIM_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database_SIM.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\Hemashospital.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
