@@ -19,10 +19,10 @@ namespace hemasHospitalDrugInventory
 
         private void username_Enter(object sender, EventArgs e)
         {
-            if(usernameText.Text == "Username")
+            if (usernameText.Text == "Username")
             {
                 usernameText.Text = "";
-                usernameText.ForeColor= Color.Black;
+                usernameText.ForeColor = Color.Black;
             }
         }
 
@@ -37,7 +37,7 @@ namespace hemasHospitalDrugInventory
 
         private void password_Enter(object sender, EventArgs e)
         {
-            if(passwordText.Text == "Password")
+            if (passwordText.Text == "Password")
             {
                 passwordText.Text = "";
                 passwordText.ForeColor = Color.Black;
@@ -52,6 +52,23 @@ namespace hemasHospitalDrugInventory
                 passwordText.ForeColor = Color.Silver;
             }
         }
+        bool UserInputValidate()
+        {
+            // Check if required fields are empty
 
+            if (string.IsNullOrWhiteSpace(usernameText.Text))
+            {
+                MessageBox.Show("Username is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usernameText.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(passwordText.Text))
+            {
+                MessageBox.Show("Password is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                passwordText.Focus();
+                return false;
+            }
+            return true;
+        }
     }
 }
