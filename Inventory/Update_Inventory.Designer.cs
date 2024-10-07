@@ -43,16 +43,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBox_category = new System.Windows.Forms.ComboBox();
             this.txt_price_per_unit = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_dosage = new System.Windows.Forms.TextBox();
             this.txt_manufacturer = new System.Windows.Forms.TextBox();
             this.txt_storage = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.comboBox_category = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -273,6 +273,17 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Name";
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(265, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 18);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Id";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -290,12 +301,29 @@
             this.panel4.Size = new System.Drawing.Size(501, 400);
             this.panel4.TabIndex = 6;
             // 
+            // comboBox_category
+            // 
+            this.comboBox_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_category.FormattingEnabled = true;
+            this.comboBox_category.Location = new System.Drawing.Point(21, 159);
+            this.comboBox_category.Name = "comboBox_category";
+            this.comboBox_category.Size = new System.Drawing.Size(224, 21);
+            this.comboBox_category.TabIndex = 49;
+            // 
             // txt_price_per_unit
             // 
             this.txt_price_per_unit.Location = new System.Drawing.Point(21, 266);
             this.txt_price_per_unit.Name = "txt_price_per_unit";
             this.txt_price_per_unit.Size = new System.Drawing.Size(224, 20);
             this.txt_price_per_unit.TabIndex = 48;
+            // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(21, 55);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.ReadOnly = true;
+            this.txt_id.Size = new System.Drawing.Size(224, 20);
+            this.txt_id.TabIndex = 47;
             // 
             // txt_name
             // 
@@ -337,33 +365,6 @@
             this.panel2.Size = new System.Drawing.Size(800, 50);
             this.panel2.TabIndex = 3;
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(265, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 18);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Id";
-            // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(21, 55);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.ReadOnly = true;
-            this.txt_id.Size = new System.Drawing.Size(224, 20);
-            this.txt_id.TabIndex = 47;
-            // 
-            // comboBox_category
-            // 
-            this.comboBox_category.FormattingEnabled = true;
-            this.comboBox_category.Location = new System.Drawing.Point(21, 159);
-            this.comboBox_category.Name = "comboBox_category";
-            this.comboBox_category.Size = new System.Drawing.Size(224, 21);
-            this.comboBox_category.TabIndex = 49;
-            // 
             // Update_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +372,7 @@
             this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Update_Inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update_Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

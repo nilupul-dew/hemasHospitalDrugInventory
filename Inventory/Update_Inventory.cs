@@ -14,12 +14,17 @@ namespace hemasHospitalDrugInventory.Inventory
 {
     public partial class Update_Inventory : Form
     {
-        private int invent_Id = 1;
-        public Update_Inventory()
+        private int invent_Id;
+        public Update_Inventory(int inventoryID)
         {
             InitializeComponent();
+            invent_Id = inventoryID;
+
+
             LoadCategories(); // Load categories on form initialization
             LoadTable(); // Load the inventory table data
+
+            
 
 
         }
@@ -122,6 +127,7 @@ namespace hemasHospitalDrugInventory.Inventory
 
                             // Optionally, clear the form fields after deletion
                             ClearFormFields();
+                            this.Close();
                         }
                         else
                         {
@@ -209,6 +215,7 @@ namespace hemasHospitalDrugInventory.Inventory
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Data updated successfully!");
+                        this.Close();
                     }
                     else
                     {

@@ -141,14 +141,15 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                     int inventoryID = Convert.ToInt32(selectedRow.Cells["InventoryID"].Value);
 
                     Console.WriteLine("Selected Inventory ID: " + inventoryID);
-                    //// Pass the retrieved data to another form
-                    //WardManage wardManager = new WardManage(inventoryID);
-                    //wardManager.FormClosed += (s, args) =>
-                    //{
-                    //    // Refresh the data after the form is closed
-                    //    //LoadWardManagerTableData();
-                    //};
-                    //wardManager.ShowDialog();
+
+                    Update_Inventory updateInventory = new Update_Inventory(inventoryID);
+                    updateInventory.FormClosed += (s, args) =>
+                    {
+                        Load_All_InventoryTableData();
+                        Load_nearExpiry_InventoryTableData();
+                        Load_LowStock_InventoryTableData();
+                    };
+                    updateInventory.ShowDialog();
 
                 }
             }
@@ -409,7 +410,16 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
         }
         private void Add_btn_Click(object sender, EventArgs e)
         {
-            
+            Add_Inventory addInventory = new Add_Inventory();
+            addInventory.FormClosed += (s, args) =>
+            {
+                // Refresh the data after the form is closed
+                Load_All_InventoryTableData();
+                Load_nearExpiry_InventoryTableData();
+                Load_LowStock_InventoryTableData();
+
+            };
+            addInventory.ShowDialog();
         }
 
         void AddAllTab()
