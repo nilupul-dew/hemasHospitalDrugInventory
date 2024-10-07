@@ -151,6 +151,10 @@
     <Content Include="Database_SIM.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Database_SIM_log.ldf">
+      <DependentUpon>Database_SIM.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Home.png" />
