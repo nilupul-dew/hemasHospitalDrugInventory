@@ -30,6 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Update_btn = new System.Windows.Forms.Button();
+            this.Delete_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ward_cmbx = new System.Windows.Forms.ComboBox();
             this.phone_tbx = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Update_btn = new System.Windows.Forms.Button();
-            this.Delete_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,6 +77,50 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(838, 111);
             this.panel3.TabIndex = 2;
+            // 
+            // Update_btn
+            // 
+            this.Update_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.Update_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Update_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
+            this.Update_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
+            this.Update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_btn.ForeColor = System.Drawing.Color.White;
+            this.Update_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Update_btn.Location = new System.Drawing.Point(447, 33);
+            this.Update_btn.Name = "Update_btn";
+            this.Update_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Update_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Update_btn.Size = new System.Drawing.Size(218, 45);
+            this.Update_btn.TabIndex = 4;
+            this.Update_btn.Text = "Update";
+            this.Update_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Update_btn.UseVisualStyleBackColor = false;
+            this.Update_btn.Click += new System.EventHandler(this.Update_btn_Click);
+            // 
+            // Delete_btn
+            // 
+            this.Delete_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
+            this.Delete_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Delete_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
+            this.Delete_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(55)))));
+            this.Delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_btn.ForeColor = System.Drawing.Color.White;
+            this.Delete_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Delete_btn.Location = new System.Drawing.Point(173, 33);
+            this.Delete_btn.Name = "Delete_btn";
+            this.Delete_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Delete_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Delete_btn.Size = new System.Drawing.Size(218, 45);
+            this.Delete_btn.TabIndex = 3;
+            this.Delete_btn.Text = "Delete";
+            this.Delete_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Delete_btn.UseVisualStyleBackColor = false;
+            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
             // 
             // panel2
             // 
@@ -199,48 +243,6 @@
             this.label1.Size = new System.Drawing.Size(283, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ward Manager Details";
-            // 
-            // Update_btn
-            // 
-            this.Update_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.Update_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Update_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(150)))), ((int)(((byte)(189)))));
-            this.Update_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(162)))), ((int)(((byte)(221)))));
-            this.Update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Update_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_btn.ForeColor = System.Drawing.Color.White;
-            this.Update_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Update_btn.Location = new System.Drawing.Point(447, 33);
-            this.Update_btn.Name = "Update_btn";
-            this.Update_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Update_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Update_btn.Size = new System.Drawing.Size(218, 45);
-            this.Update_btn.TabIndex = 4;
-            this.Update_btn.Text = "Update";
-            this.Update_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Update_btn.UseVisualStyleBackColor = false;
-            // 
-            // Delete_btn
-            // 
-            this.Delete_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.Delete_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Delete_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.Delete_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(55)))));
-            this.Delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete_btn.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_btn.ForeColor = System.Drawing.Color.White;
-            this.Delete_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Delete_btn.Location = new System.Drawing.Point(173, 33);
-            this.Delete_btn.Name = "Delete_btn";
-            this.Delete_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Delete_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Delete_btn.Size = new System.Drawing.Size(218, 45);
-            this.Delete_btn.TabIndex = 3;
-            this.Delete_btn.Text = "Delete";
-            this.Delete_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Delete_btn.UseVisualStyleBackColor = false;
             // 
             // WardManage
             // 

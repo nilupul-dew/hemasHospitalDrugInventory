@@ -18,10 +18,12 @@ namespace hemasHospitalDrugInventory.Suppliers.S_Usercontrols
         public S_UC_Index()
         {
             InitializeComponent();
-            LoadTableData();
+            LoadSupplierTableData();
+            LoadWardManagerTableData();
         }
 
-        private void LoadTableData()
+        // Supplier Tab -------------------------------------------------
+        void LoadSupplierTableData()
         {
 
             try
@@ -130,10 +132,103 @@ namespace hemasHospitalDrugInventory.Suppliers.S_Usercontrols
                 supplierMange.FormClosed += (s, args) =>
                 {
                     // Refresh the data after the previous form is closed
-                    LoadTableData();
+                    LoadSupplierTableData();
                 };
                 supplierMange.ShowDialog();  
             }
+        }
+
+        // Ward Manager Tab -------------------------------------------------
+
+        void LoadWardManagerTableData()
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(CommonConnecString.ConnectionString))
+                {
+                    connect.Open();
+                    string query = @"
+                SELECT 
+                    wm.WardManagerID, 
+                    wm.Name AS ManagerName, 
+                    wm.Email, 
+                    wm.PhoneNumber, 
+                    w.Name AS WardName
+                FROM Ward_Manager wm
+                INNER JOIN Ward w ON wm.WardID = w.WardID;";  // Joining Ward table to get the ward name
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            dataGridView2.DataSource = table;
+                            Console.WriteLine("Data Loaded Successfully LoadWardManagerTableData");
+
+                            // Rename columns after setting the DataSource
+                            #region Rename Column Names
+                            foreach (DataGridViewColumn column in dataGridView2.Columns)
+                            {
+                                Console.WriteLine("Data is available LoadWardManagerTableData");
+                                switch (column.Name)
+                                {
+                                    case "WardManagerID":
+                                        column.HeaderText = "ID";
+                                        break;
+                                    case "ManagerName":
+                                        column.HeaderText = "Name";
+                                        break;
+                                    case "Email":
+                                        column.HeaderText = "Email";
+                                        break;
+                                    case "PhoneNumber":
+                                        column.HeaderText = "Phone Number";
+                                        break;
+                                    case "WardName":
+                                        column.HeaderText = "Ward Name";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            #endregion
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the clicked cell is not a header cell
+            if (e.RowIndex >= 0)
+            {
+
+                DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
+
+                // Retrieve data from the selected row based on Ward Manager details
+                int wardManagerID = Convert.ToInt32(selectedRow.Cells["WardManagerID"].Value);
+                string managerName = selectedRow.Cells["ManagerName"].Value.ToString();
+                string phoneNumber = selectedRow.Cells["PhoneNumber"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
+                string wardName = selectedRow.Cells["WardName"].Value.ToString();  // Ward Name from the joined Ward table
+
+                // Pass the retrieved data to another form
+                WardManage wardManager = new WardManage(wardManagerID, managerName, phoneNumber, email, wardName);
+                wardManager.FormClosed += (s, args) =>
+                {
+                    // Refresh the data after the form is closed
+                    LoadWardManagerTableData();
+                };
+                wardManager.ShowDialog();
+            }
+
         }
     }
 }
