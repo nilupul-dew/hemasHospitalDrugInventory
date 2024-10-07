@@ -139,7 +139,7 @@
             this.panel5.Location = new System.Drawing.Point(1, 121);
             this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(305, 278);
+            this.panel5.Size = new System.Drawing.Size(305, 398);
             this.panel5.TabIndex = 7;
             // 
             // pictureBox2
@@ -281,7 +281,7 @@
             this.panel3.Location = new System.Drawing.Point(307, 120);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(184, 280);
+            this.panel3.Size = new System.Drawing.Size(184, 400);
             this.panel3.TabIndex = 5;
             // 
             // panel2
@@ -363,7 +363,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.panel6, 3);
             this.panel6.Controls.Add(this.Add_btn);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 400);
+            this.panel6.Location = new System.Drawing.Point(0, 520);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(800, 50);
@@ -389,7 +389,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 570);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel4
@@ -407,14 +407,14 @@
             this.panel4.Location = new System.Drawing.Point(491, 120);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 280);
+            this.panel4.Size = new System.Drawing.Size(309, 400);
             this.panel4.TabIndex = 6;
             // 
             // Add_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Add_Inventory";
             this.Text = "Add_Inventory";

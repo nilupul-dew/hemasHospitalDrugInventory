@@ -163,7 +163,7 @@
             this.panel6.Controls.Add(this.Update_btn);
             this.panel6.Controls.Add(this.Delete_btn);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 400);
+            this.panel6.Location = new System.Drawing.Point(0, 520);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(800, 50);
@@ -187,7 +187,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 570);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel3
@@ -205,7 +205,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 120);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(299, 280);
+            this.panel3.Size = new System.Drawing.Size(299, 400);
             this.panel3.TabIndex = 5;
             // 
             // label6
@@ -311,7 +311,7 @@
             this.panel4.Location = new System.Drawing.Point(299, 120);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(501, 280);
+            this.panel4.Size = new System.Drawing.Size(501, 400);
             this.panel4.TabIndex = 6;
             // 
             // comboBox2
@@ -388,7 +388,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Update_Inventory";
             this.Text = "Update_Inventory";
