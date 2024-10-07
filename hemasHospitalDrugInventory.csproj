@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +80,12 @@
     </Compile>
     <Compile Include="Employees\WardManage.Designer.cs">
       <DependentUpon>WardManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory\Add_Inventory.cs">
       <SubType>Form</SubType>
@@ -144,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\WardManage.resx">
       <DependentUpon>WardManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\Add_Inventory.resx">
       <DependentUpon>Add_Inventory.cs</DependentUpon>
@@ -243,5 +253,6 @@
       <DependentUpon>Database_SIM.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
