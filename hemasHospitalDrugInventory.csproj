@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Employees\WardManage.resx">
       <DependentUpon>WardManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Add_Inventory.resx">
+      <DependentUpon>Add_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory\I_UserControls\I_UC_Main.resx">
       <DependentUpon>I_UC_Main.cs</DependentUpon>
     </EmbeddedResource>
