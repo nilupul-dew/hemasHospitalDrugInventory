@@ -23,8 +23,8 @@ namespace hemasHospitalDrugInventory.Home
 
         public void LoadWardManagerChart()
         {
-            List<string> wardNamesList = new List<string>();
-            List<int> managerCountList = new List<int>();
+            List<string> DrugNamesList = new List<string>();
+            List<int> quantityList = new List<int>();
 
             try
             {
@@ -34,11 +34,11 @@ namespace hemasHospitalDrugInventory.Home
 
                     string query = @"
                              SELECT 
-                             w.Name AS WardName,
-                            COUNT(wm.WardManagerID) AS WardManagerCount
-                            FROM Ward w
-                            LEFT JOIN Ward_Manager wm ON w.WardID = wm.WardID
-                            GROUP BY w.Name;";
+                            d.DrugName AS DrugName,
+                            SUM(ISNULL(i.Quantity, 0)) AS Quantity
+                            FROM Drug d
+                            LEFT JOIN Inventory i ON d.Drug_ID = i.Drug_ID
+                            GROUP BY d.DrugName;";
 
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
@@ -47,19 +47,19 @@ namespace hemasHospitalDrugInventory.Home
                         // Reading data from the database
                         while (reader.Read())
                         {
-                            string wardName = reader["WardName"].ToString();
-                            int managerCount = Convert.ToInt32(reader["WardManagerCount"]);
+                            string DrugName = reader["DrugName"].ToString();
+                            int Quantity = Convert.ToInt32(reader["Quantity"]);
 
                             // Add to lists
-                            wardNamesList.Add(wardName);
-                            managerCountList.Add(managerCount);
+                            DrugNamesList.Add(DrugName);
+                            quantityList.Add(Quantity);
                         }
                     }
                 }
 
                 // Convert lists to arrays
-                string[] wardNamesArray = wardNamesList.ToArray();
-                int[] managerCountArray = managerCountList.ToArray();
+                string[] DrugNamesArray = DrugNamesList.ToArray();
+                int[] quantityArray = quantityList.ToArray();
 
                 // Now you can use the arrays like:
                 // string[] categories = { "Category 1", "Category 2", "Category 3" };
@@ -74,11 +74,11 @@ namespace hemasHospitalDrugInventory.Home
                 chart1.Series.Add("Series1");
 
                 // Bind data to the series
-                chart1.Series["Series1"].Points.DataBindXY(wardNamesArray, managerCountArray);
+                chart1.Series["Series1"].Points.DataBindXY(DrugNamesArray, quantityArray);
 
                 // Customize chart appearance
-                chart1.ChartAreas[0].AxisX.Title = "Ward Name";
-                chart1.ChartAreas[0].AxisY.Title = "Ward Manager Count";
+                chart1.ChartAreas[0].AxisX.Title = "Drug Name";
+                chart1.ChartAreas[0].AxisY.Title = "Availble Quantity";
                 chart1.Series["Series1"].ChartType = SeriesChartType.Bar;
 
                 chart1.ChartAreas[0].AxisX.Interval = 1;  // Ensure all labels are shown
