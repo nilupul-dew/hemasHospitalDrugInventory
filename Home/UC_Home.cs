@@ -71,15 +71,15 @@ namespace hemasHospitalDrugInventory.Home
 
                 // Add a new chart area and series
                 chart1.ChartAreas.Add("chartArea1");
-                chart1.Series.Add("Series1");
+                chart1.Series.Add("Drug Count");
 
                 // Bind data to the series
-                chart1.Series["Series1"].Points.DataBindXY(DrugNamesArray, quantityArray);
+                chart1.Series["Drug Count"].Points.DataBindXY(DrugNamesArray, quantityArray);
 
                 // Customize chart appearance
                 chart1.ChartAreas[0].AxisX.Title = "Drug Name";
                 chart1.ChartAreas[0].AxisY.Title = "Availble Quantity";
-                chart1.Series["Series1"].ChartType = SeriesChartType.Bar;
+                chart1.Series["Drug Count"].ChartType = SeriesChartType.Bar;
 
                 chart1.ChartAreas[0].AxisX.Interval = 1;  // Ensure all labels are shown
             }
