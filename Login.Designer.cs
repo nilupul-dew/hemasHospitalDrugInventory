@@ -184,9 +184,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(249)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.LoginPanel.ResumeLayout(false);
+            this.LoginPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel LoginPanel;
+        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.TextBox usernameText;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox passwordText;
     }
 }
