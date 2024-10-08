@@ -18,6 +18,7 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
         {
             InitializeComponent();
             LoadOrderTableData();
+            LoadOrderedList();
         }
 
         void LoadOrderTableData()
@@ -79,6 +80,75 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+            }
+
+        }
+
+        void LoadOrderedList()
+        {
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(CommonConnecString.ConnectionString))
+                {
+                    connect.Open();
+                    string query = @"
+                                SELECT 
+                                    o.OrderID,
+                                    d.DrugName,
+                                    d.Dosage,
+                                    d.CategoryID,
+                                    oe.OrderedDate,
+                                    o.Quantity
+                                FROM [Order] o
+                                INNER JOIN Drug d ON o.Drug_ID = d.Drug_ID
+                                INNER JOIN OrderEvent oe ON o.OrderEventID = oe.OrderEventID
+                                WHERE oe.IsDelivered = 1;";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connect))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            dataGridView2.DataSource = table;
+                            Console.WriteLine("Data Loaded Successfully into dataGridView2");
+
+                            // Rename columns after setting the DataSource
+                            #region Rename Column Names
+                            foreach (DataGridViewColumn column in dataGridView2.Columns)
+                            {
+                                switch (column.Name)
+                                {
+                                    case "OrderID":
+                                        column.HeaderText = "Order ID";
+                                        break;
+                                    case "DrugName":
+                                        column.HeaderText = "Drug Name";
+                                        break;
+                                    case "Dosage":
+                                        column.HeaderText = "Dosage";
+                                        break;
+                                    case "CategoryID":
+                                        column.HeaderText = "Category ID";
+                                        break;
+                                    case "OrderedDate":
+                                        column.HeaderText = "Ordered Date";
+                                        break;
+                                    case "Quantity":
+                                        column.HeaderText = "Quantity";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            #endregion
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

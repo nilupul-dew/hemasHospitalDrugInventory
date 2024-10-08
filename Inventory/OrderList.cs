@@ -205,7 +205,7 @@ namespace hemasHospitalDrugInventory.Inventory
                         cmd.Parameters.AddWithValue("@SupplierID", (int)suppliers_cmbx.SelectedValue);
                         cmd.Parameters.AddWithValue("@IsDelivered", 0);
                         cmd.Parameters.AddWithValue("@OrderedDate", DateTime.Now); // Automatically set the current date
-                        cmd.Parameters.AddWithValue("@OrderStatus", "ordered");
+                        cmd.Parameters.AddWithValue("@OrderStatus", "Ongoing");
 
                         object result = cmd.ExecuteScalar();  // ExecuteScalar returns the first column of the first row in the result set
                         if (result != null)
