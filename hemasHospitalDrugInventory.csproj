@@ -61,7 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="ConnectString.cs" />
+=======
+    <Compile Include="CommonConnecString.cs" />
+>>>>>>> dc782cf37506655880890d1960ab030d50fe6356
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

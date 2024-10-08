@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,10 @@ namespace hemasHospitalDrugInventory
 
         private void username_Enter(object sender, EventArgs e)
         {
-            if(usernameText.Text == "Username")
+            if (usernameText.Text == "Username")
             {
                 usernameText.Text = "";
-                usernameText.ForeColor= Color.Black;
+                usernameText.ForeColor = Color.Black;
             }
         }
 
@@ -37,7 +38,7 @@ namespace hemasHospitalDrugInventory
 
         private void password_Enter(object sender, EventArgs e)
         {
-            if(passwordText.Text == "Password")
+            if (passwordText.Text == "Password")
             {
                 passwordText.Text = "";
                 passwordText.ForeColor = Color.Black;
@@ -52,6 +53,65 @@ namespace hemasHospitalDrugInventory
                 passwordText.ForeColor = Color.Silver;
             }
         }
+        bool UserInputValidate()
+        {
+            // Check if required fields are empty
 
+            if (string.IsNullOrWhiteSpace(usernameText.Text))
+            {
+                MessageBox.Show("Username is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usernameText.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(passwordText.Text))
+            {
+                MessageBox.Show("Password is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                passwordText.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+
+            if (!UserInputValidate())
+            {
+                return;
+            }
+
+
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(CommonConnecString.ConnectionString))
+                {
+                    connect.Open();
+
+                    string userName = usernameText.Text;
+                    string password = passwordText.Text;
+                    string query = "SELECT COUNT(*) FROM [dbo].[User] WHERE UserName = @userName AND Password = @password";
+
+                    SqlCommand command = new SqlCommand(query, connect);
+                    command.Parameters.AddWithValue("@UserName", userName);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    int count = (int)command.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Admin found!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Admin not found.");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Login/Login_btn_Click: " + ex.Message);
+            }
+        }
     }
 }
