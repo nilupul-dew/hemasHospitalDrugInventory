@@ -17,7 +17,7 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
         public T_UC_Main()
         {
             InitializeComponent();
-            //LoadOrderTableData();
+            LoadOrderTableData();
         }
 
         void LoadOrderTableData()
@@ -27,18 +27,15 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
                 using (SqlConnection connect = new SqlConnection(CommonConnecString.ConnectionString))
                 {
                     connect.Open();
-
-                    // SQL query to select data from Order table and join with Inventory and Supplier
                     string query = @"
-                SELECT 
-                    o.OrderID,
-                    o.Quantity,
-                    o.IsDelivered,
-                    i.ProductName,
-                    s.Name AS SupplierName
-                FROM [Order] o
-                INNER JOIN Inventory i ON o.InventoryID = i.InventoryID
-                INNER JOIN Supplier s ON o.SupplierID = s.SupplierID;";
+                                SELECT 
+                                    oe.OrderEventID,
+                                    s.Name AS SupplierName,
+                                    oe.IsDelivered,
+                                    oe.OrderedDate,
+                                    oe.OrderStatus
+                                FROM OrderEvent oe
+                                INNER JOIN Supplier s ON oe.SupplierID = s.SupplierID;";
 
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
@@ -55,20 +52,20 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
                             {
                                 switch (column.Name)
                                 {
-                                    case "OrderID":
-                                        column.HeaderText = "Order ID";
-                                        break;
-                                    case "ProductName":
-                                        column.HeaderText = "Product Name";
-                                        break;
-                                    case "Quantity":
-                                        column.HeaderText = "Quantity";
+                                    case "OrderEventID":
+                                        column.HeaderText = "Order Event ID";
                                         break;
                                     case "SupplierName":
                                         column.HeaderText = "Supplier Name";
                                         break;
                                     case "IsDelivered":
-                                        column.HeaderText = "Delivered";
+                                        column.HeaderText = "Delivered?";
+                                        break;
+                                    case "OrderedDate":
+                                        column.HeaderText = "Ordered Date";
+                                        break;
+                                    case "OrderStatus":
+                                        column.HeaderText = "Order Status";
                                         break;
                                     default:
                                         break;
@@ -81,10 +78,12 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("T_UC_Main, Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(ex);
+                Console.WriteLine("Error: " + ex.Message);
             }
+
         }
+
+
 
     }
 

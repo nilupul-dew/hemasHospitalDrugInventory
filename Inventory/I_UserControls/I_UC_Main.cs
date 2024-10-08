@@ -31,18 +31,18 @@ namespace hemasHospitalDrugInventory.Inventory.I_UserControls
                 {
                     connect.Open();
                     string query = @"
-            SELECT 
-                i.InventoryID,
-                d.DrugName, 
-                d.StorageLocation, 
-                d.CategoryID, 
-                s.Name AS SupplierName, 
-                s.PhoneNumber,
-                i.ExpireDate, 
-                i.Quantity
-            FROM Inventory i
-            INNER JOIN Supplier s ON i.SupplierID = s.SupplierID
-            INNER JOIN Drug d ON i.Drug_ID = d.Drug_ID;";
+                        SELECT 
+                            i.InventoryID,
+                            d.DrugName, 
+                            d.StorageLocation, 
+                            d.CategoryID, 
+                            s.Name AS SupplierName, 
+                            s.PhoneNumber,
+                            i.ExpireDate, 
+                            i.Quantity
+                        FROM Inventory i
+                        INNER JOIN Supplier s ON i.SupplierID = s.SupplierID
+                        INNER JOIN Drug d ON i.Drug_ID = d.Drug_ID;";
 
                     using (SqlCommand cmd = new SqlCommand(query, connect))
                     {
