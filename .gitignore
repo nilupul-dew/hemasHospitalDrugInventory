@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /ConnectionString.cs
+/Login.cs
+/Login.Designer.cs
+/Login.resx
