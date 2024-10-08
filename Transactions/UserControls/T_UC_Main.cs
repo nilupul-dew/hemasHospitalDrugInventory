@@ -32,7 +32,6 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
                                 SELECT 
                                     oe.OrderEventID,
                                     s.Name AS SupplierName,
-                                    oe.IsDelivered,
                                     oe.OrderedDate,
                                     oe.OrderStatus
                                 FROM OrderEvent oe
@@ -58,9 +57,6 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
                                         break;
                                     case "SupplierName":
                                         column.HeaderText = "Supplier Name";
-                                        break;
-                                    case "IsDelivered":
-                                        column.HeaderText = "Delivered?";
                                         break;
                                     case "OrderedDate":
                                         column.HeaderText = "Ordered Date";
@@ -148,7 +144,7 @@ namespace hemasHospitalDrugInventory.Transactions.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error:" + ex, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

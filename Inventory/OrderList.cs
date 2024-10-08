@@ -172,7 +172,7 @@ namespace hemasHospitalDrugInventory.Inventory
 
             if (hasNegativeQuantity)
             {
-                MessageBox.Show("One or more rows have a Quantity less than 0.","Invalid Quantity",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Quantity should be more than 0.","Invalid Quantity",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             else

@@ -61,9 +61,6 @@ namespace hemasHospitalDrugInventory.Home
                 string[] DrugNamesArray = DrugNamesList.ToArray();
                 int[] quantityArray = quantityList.ToArray();
 
-                // Now you can use the arrays like:
-                // string[] categories = { "Category 1", "Category 2", "Category 3" };
-                // int[] values = { 10, 20, 15 };
 
                 // Clear any existing series and chart areas
                 chart1.Series.Clear();
@@ -71,15 +68,15 @@ namespace hemasHospitalDrugInventory.Home
 
                 // Add a new chart area and series
                 chart1.ChartAreas.Add("chartArea1");
-                chart1.Series.Add("Series1");
+                chart1.Series.Add("Drug Count");
 
                 // Bind data to the series
-                chart1.Series["Series1"].Points.DataBindXY(DrugNamesArray, quantityArray);
+                chart1.Series["Drug Count"].Points.DataBindXY(DrugNamesArray, quantityArray);
 
                 // Customize chart appearance
                 chart1.ChartAreas[0].AxisX.Title = "Drug Name";
                 chart1.ChartAreas[0].AxisY.Title = "Availble Quantity";
-                chart1.Series["Series1"].ChartType = SeriesChartType.Bar;
+                chart1.Series["Drug Count"].ChartType = SeriesChartType.Bar;
 
                 chart1.ChartAreas[0].AxisX.Interval = 1;  // Ensure all labels are shown
             }
