@@ -61,9 +61,6 @@ namespace hemasHospitalDrugInventory.Home
                 string[] DrugNamesArray = DrugNamesList.ToArray();
                 int[] quantityArray = quantityList.ToArray();
 
-                // Now you can use the arrays like:
-                // string[] categories = { "Category 1", "Category 2", "Category 3" };
-                // int[] values = { 10, 20, 15 };
 
                 // Clear any existing series and chart areas
                 chart1.Series.Clear();
