@@ -12,7 +12,7 @@ namespace PharmacyManagementSystem._Common
         {
             get
             {
-                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\hemasHospitalDrugInventory\Database_SIM.mdf;Integrated Security=True";
+                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\FLiX\Source\Repos\hemasHospitalDrugInventory\Database_SIM.mdf;Integrated Security=True";
             }
         }
     }
@@ -23,7 +23,7 @@ namespace PharmacyManagementSystem._Common
         {
             get
             {
-                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\hemasHospitalDrugInventory\Database_SIM.mdf;Integrated Security=True";
+                return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\FLiX\Source\Repos\hemasHospitalDrugInventory\Database_SIM.mdf;Integrated Security=True";
             }
         }
     }
