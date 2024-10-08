@@ -69,6 +69,8 @@ namespace hemasHospitalDrugInventory.Inventory
                             // Retrieve CategoryID from the reader to select the right ComboBox item
                             int existingCategoryId = reader.GetInt32(reader.GetOrdinal("CategoryID"));
 
+                            Drug_name_lbl.Text = reader["DrugName"].ToString();
+
                             // Find the existing category in the ComboBox and select it
                             foreach (ComboBoxItem item in comboBox_category.Items)
                             {
