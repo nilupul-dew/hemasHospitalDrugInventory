@@ -265,5 +265,8 @@
       <DependentUpon>Database_SIM.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QR_Scan\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
