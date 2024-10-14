@@ -115,6 +115,7 @@ namespace hemasHospitalDrugInventory
             catch (Exception ex)
             {
                 MessageBox.Show("Error Login/Login_btn_Click: " + ex.Message);
+
             }
         }
     }
